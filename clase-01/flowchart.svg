@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1180" viewBox="0 0 920 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Diagrama de flujo de la montaña rusa</title>
+  <desc id="desc">Flujo del programa day3.py para validar altura, edad y precio de entrada.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .line { stroke: #334155; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .node { fill: #ffffff; stroke: #0f172a; stroke-width: 2.2; }
+      .start { fill: #dcfce7; stroke: #166534; }
+      .process { fill: #e0f2fe; stroke: #075985; }
+      .decision { fill: #fef3c7; stroke: #92400e; }
+      .end { fill: #fee2e2; stroke: #991b1b; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+      .small { font-size: 15px; fill: #334155; }
+      .edge { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; fill: #334155; text-anchor: middle; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="920" height="1180"/>
+  <text class="title" x="460" y="42">Flujo de compra: montaña rusa</text>
+
+  <ellipse class="node start" cx="460" cy="100" rx="92" ry="34"/>
+  <text class="label" x="460" y="100">Inicio</text>
+
+  <rect class="node process" x="310" y="164" width="300" height="70" rx="8"/>
+  <text class="label" x="460" y="188">Mostrar bienvenida</text>
+  <text class="label small" x="460" y="212">Welcome to the rollercoaster!</text>
+
+  <rect class="node process" x="310" y="274" width="300" height="70" rx="8"/>
+  <text class="label" x="460" y="298">Solicitar altura</text>
+  <text class="label small" x="460" y="322">What is your height in cm?</text>
+
+  <path class="node decision" d="M460 384 L620 464 L460 544 L300 464 Z"/>
+  <text class="label" x="460" y="452">¿Altura &gt;=</text>
+  <text class="label" x="460" y="476">120 cm?</text>
+
+  <rect class="node end" x="54" y="604" width="320" height="82" rx="8"/>
+  <text class="label" x="214" y="630">No puede subir</text>
+  <text class="label small" x="214" y="655">Debe crecer más antes</text>
+  <text class="label small" x="214" y="674">de poder subir.</text>
+
+  <rect class="node process" x="546" y="604" width="320" height="82" rx="8"/>
+  <text class="label" x="706" y="630">Puede subir</text>
+  <text class="label small" x="706" y="655">You can ride the</text>
+  <text class="label small" x="706" y="674">rollercoaster!</text>
+
+  <rect class="node process" x="556" y="736" width="300" height="70" rx="8"/>
+  <text class="label" x="706" y="760">Solicitar edad</text>
+  <text class="label small" x="706" y="784">What is your age?</text>
+
+  <path class="node decision" d="M706 846 L856 916 L706 986 L556 916 Z"/>
+  <text class="label" x="706" y="906">¿Edad &lt; 12?</text>
+
+  <rect class="node end" x="354" y="882" width="250" height="68" rx="8"/>
+  <text class="label" x="479" y="906">Pagar $5</text>
+  <text class="label small" x="479" y="929">Please pay $5.</text>
+
+  <path class="node decision" d="M706 1016 L856 1086 L706 1156 L556 1086 Z"/>
+  <text class="label" x="706" y="1076">¿Edad &lt;= 18?</text>
+
+  <rect class="node end" x="354" y="1052" width="250" height="68" rx="8"/>
+  <text class="label" x="479" y="1076">Pagar $7</text>
+  <text class="label small" x="479" y="1099">Please pay $7.</text>
+
+  <rect class="node end" x="26" y="1052" width="250" height="68" rx="8"/>
+  <text class="label" x="151" y="1076">Pagar $12</text>
+  <text class="label small" x="151" y="1099">Please pay $12.</text>
+
+  <line class="line" x1="460" y1="134" x2="460" y2="164"/>
+  <line class="line" x1="460" y1="234" x2="460" y2="274"/>
+  <line class="line" x1="460" y1="344" x2="460" y2="384"/>
+
+  <path class="line" d="M300 464 H214 V604"/>
+  <text class="edge" x="250" y="448">No</text>
+
+  <path class="line" d="M620 464 H706 V604"/>
+  <text class="edge" x="670" y="448">Sí</text>
+
+  <line class="line" x1="706" y1="686" x2="706" y2="736"/>
+  <line class="line" x1="706" y1="806" x2="706" y2="846"/>
+
+  <path class="line" d="M556 916 H604"/>
+  <text class="edge" x="626" y="900">Sí</text>
+
+  <line class="line" x1="706" y1="986" x2="706" y2="1016"/>
+  <text class="edge" x="735" y="1005">No</text>
+
+  <path class="line" d="M556 1086 H604"/>
+  <text class="edge" x="626" y="1070">Sí</text>
+
+  <path class="line" d="M706 1156 V1168 H151 V1120"/>
+  <text class="edge" x="735" y="1140">No</text>
+</svg>
